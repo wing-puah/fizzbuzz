@@ -1,25 +1,14 @@
-function Fizzbuzz(count){
-  let i = 0,
-      fbArr = [];
+function Fizzbuzz(count) {
+  let FBArr = [...Array(count+1).keys()].slice(1)
 
-  for(i; i < (count+1); i++){
-    fbArr.push(i);
-  }
+  let newArr = FBArr.map( x => {
+    if (x % 5 == 0 && x % 3 == 0) {return 'Fizz Buzz'}
+    else if (x % 3 == 0) {return 'Fizz'}
+    else if (x % 5 == 0) {return 'Buzz'}
+    else return x;
+  })
 
-  for( var j = 1; j < fbArr.length; j++){
-    if (fbArr[j] % 5 == 0 && fbArr[j] % 3 == 0){
-      fbArr[j] = 'Fizz Buzz';
-    }
-    if (fbArr[j] % 3 == 0 ){
-      fbArr[j] = 'Fizz';
-    }
-    if (fbArr[j] % 5 == 0 ){
-      fbArr[j] = 'Buzz';
-    }
-  }
-
-  fbArr.shift(); // Because i start from 0 
-  return fbArr;
+  return newArr
 }
 
 module.exports.Fizzbuzz = Fizzbuzz;
