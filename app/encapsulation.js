@@ -28,3 +28,5 @@ console.log('Private property (puppy.owner): ' + puppy.owner +
 
 console.log('Public method (puppy.bark()): ' + puppy.bark()) // Returns 'Woof! Woof! Hako just barked'
 console.log('Private method (puppy.greetOwner()): ' + puppy.greetOwner()) // Returns puppy.greetOwner() is not a function
+
+module.exports.Dog = Dog;
